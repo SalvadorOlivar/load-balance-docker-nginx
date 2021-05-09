@@ -2,12 +2,16 @@ version: "3.9"
 services:
   node1:
     container_name: node-1
-    image: sorrego/the-example-app.nodejs:latest
+    build:
+      context: ./app1
+      dockerfile: Dockerfile  
     ports:
       - "3001:3000"
   node2:
     container_name: node-2
-    image: sorrego/the-example-app.nodejs:latest
+    build:
+      context: ./app2
+      dockerfile: Dockerfile 
     ports:
       - "3002:3000"
   nginx:
